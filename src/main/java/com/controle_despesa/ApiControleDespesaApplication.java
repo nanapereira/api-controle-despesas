@@ -26,6 +26,7 @@ public class ApiControleDespesaApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+
         Categoria categoria01 = new Categoria(null, "Livros", LocalDate.now());
         Categoria categoria02 = new Categoria(null, "Eletronicos", LocalDate.now());
         Categoria categoria03 = new Categoria(null, "Horfruit", LocalDate.now());
@@ -41,7 +42,20 @@ public class ApiControleDespesaApplication implements CommandLineRunner {
         Produto produto01 = new Produto(null, "Pequeno Principe",
                 "un", 34.90, true);
 
+        Produto produto02 = new Produto(null, "TV",
+                "un", 1500.55, true);
+
+        Produto produto03 = new Produto(null, "Batata",
+                "kg", 2.25, true);
+
+        Produto produto04 = new Produto(null, "Tomate",
+                "kg", 3.78, true);
+
 		produtoController.salvar(produto01);
+        produtoController.salvar(produto02);
+        produtoController.salvar(produto03);
+        produtoController.salvar(produto04);
+
 
     }
 }
