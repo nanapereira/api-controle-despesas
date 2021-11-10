@@ -39,9 +39,7 @@ public class CategoriaController {
     @PutMapping("/{id}")
     public void atualiza(@PathVariable Long id, @RequestBody Categoria categoria) {
         Categoria categoriaRetornada = categoriaRepository.getOne(id);
-        if (categoriaRetornada != null) {
-            categoriaRetornada.setData(categoria.getData());
-            categoriaRepository.save(categoriaRetornada);
-        }
+        categoriaRetornada.setDataCadastro(categoria.getDataCadastro());
+        categoriaRepository.save(categoriaRetornada);
     }
 }
