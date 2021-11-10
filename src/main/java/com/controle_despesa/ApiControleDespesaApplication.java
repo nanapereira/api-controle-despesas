@@ -2,8 +2,8 @@ package com.controle_despesa;
 
 import com.controle_despesa.controller.CategoriaController;
 import com.controle_despesa.controller.ProdutoController;
-import com.controle_despesa.entity.Categoria;
-import com.controle_despesa.entity.Produto;
+import com.controle_despesa.model.entity.Categoria;
+import com.controle_despesa.model.entity.Produto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -38,24 +38,6 @@ public class ApiControleDespesaApplication implements CommandLineRunner {
         categoriaController.salvar(categoria03);
         categoriaController.salvar(categoria04);
         categoriaController.salvar(categoria05);
-
-        Produto produto01 = new Produto(null, "Pequeno Principe",
-                "un", 34.90, true);
-
-        Produto produto02 = new Produto(null, "TV",
-                "un", 1500.55, true);
-
-        Produto produto03 = new Produto(null, "Batata",
-                "kg", 2.25, true);
-
-        Produto produto04 = new Produto(null, "Tomate",
-                "kg", 3.78, true);
-
-		produtoController.salvar(produto01);
-        produtoController.salvar(produto02);
-        produtoController.salvar(produto03);
-        produtoController.salvar(produto04);
-
 
     }
 }

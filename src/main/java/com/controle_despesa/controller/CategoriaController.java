@@ -1,8 +1,8 @@
 package com.controle_despesa.controller;
 
-import com.controle_despesa.dto.CategoriaDTO;
-import com.controle_despesa.entity.Categoria;
-import com.controle_despesa.repositories.CategoriaRepository;
+import com.controle_despesa.model.dto.CategoriaDTO;
+import com.controle_despesa.model.entity.Categoria;
+import com.controle_despesa.model.repositories.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

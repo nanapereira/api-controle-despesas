@@ -1,46 +1,21 @@
 package com.controle_despesa.controller;
 
-import com.controle_despesa.dto.ProdutoDTO;
-import com.controle_despesa.entity.Produto;
-import com.controle_despesa.repositories.ProdutoRepository;
+import com.controle_despesa.model.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/produto")
 public class ProdutoController {
 
     @Autowired
-    private ProdutoRepository produtoRepository;
+    private ProdutoService service;
 
-    @GetMapping
-    public List<ProdutoDTO> listaTudo() {
-        List<Produto> produtos = produtoRepository.findAll();
-        return ProdutoDTO.converter(produtos);
+    @PatchMapping("/{id}")
+    public void inativar(@PathVariable Long id) {
+        service.inativar(id);
     }
-
-    @GetMapping("/{id}")
-    public Produto getById(@PathVariable Long id) {
-        return produtoRepository.findById(id).get();
-    }
-
-    @PostMapping
-    public void salvar(@RequestBody Produto produto) {
-        produtoRepository.save(produto);
-    }
-
-    @DeleteMapping("/{id}")
-    public void excluir(@PathVariable Long id) {
-        produtoRepository.deleteById(id);
-    }
-
-    @PutMapping("/{id}")
-    public void atualiza(@PathVariable Long id, @RequestBody Produto produto) {
-        Produto produtoRetornado = produtoRepository.getOne(id);
-        produtoRetornado.setValorUnitario(produto.getValorUnitario());
-        produtoRepository.save(produtoRetornado);
-    }
-
 }

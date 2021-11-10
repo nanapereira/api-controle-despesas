@@ -1,4 +1,4 @@
-package com.controle_despesa.entity;
+package com.controle_despesa.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,21 +9,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.LocalDate;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Produto {
+public class Categoria {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String descricao;
-    private String unidadeMedida;
-    private double valorUnitario;
-    private boolean status;
-
+    private LocalDate dataCadastro = LocalDate.now();
 
 }

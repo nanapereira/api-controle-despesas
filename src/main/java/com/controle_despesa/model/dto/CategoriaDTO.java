@@ -1,6 +1,6 @@
-package com.controle_despesa.dto;
+package com.controle_despesa.model.dto;
 
-import com.controle_despesa.entity.Categoria;
+import com.controle_despesa.model.entity.Categoria;
 import lombok.Getter;
 
 import java.time.LocalDate;
